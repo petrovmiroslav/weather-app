@@ -1,38 +1,166 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.weatherApp {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  color: #F2F2F2;
+}
+.bg, .bg__layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.bg__layer {
+  opacity: 0;
+  transition: opacity .3s linear;
+}
+.bg__layer_ON {
+  opacity: 1;
+}
+.bg__layer_clouds {
+  background-color: #132640;
+}
+.bg__layer_snow {
+  background-color: #656d6d;
+}
+.bg__layer_rain {
+  background-color: #131c25;
+}
+.bg__layer_clear {
+  background-color: #5083A4;
+}
+.header {
+  width: 100%;
+  position: relative;
+}
+.header__h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 10vmin;
+}
+.header__loading {
+  font-size: 16px;
+  font-weight: 300;
+  color: #f2f2f299;
+}
+.header__loading,
+.header__icon {
+  width: 28vmin;
+  height: 28vmin;
+  min-width: 50px;
+  max-width: 100px;
+  min-height: 50px;
+  max-height: 100px;
+  margin: auto;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.header__img {
+  min-width: 100%;
+  min-height: 100%;
 }
+.header__gap {
+  min-height: 24px;
+  height: 4vh;
+}
+.errorMessage {
+  margin: 0 auto auto;
+  padding: 0 24px;
+  position: relative;
+}
+.errorMessage__button {
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+}
+.display {
+  position: relative;
+}
+.section {
+  min-height: 90px;
+  padding: 0 12px;
+}
+.section__header,
+.errorMessage__text,
+.errorMessage__button {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 300;
+  color: #f2f2f299;
+}
+.section__gap {
+  height: 11px;
+  border-top: 1px solid #F2F2F2;
+  opacity: .5;
+}
+.section__value,
+.section__button {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-size: 32px;
+  font-weight: 500;
+}
+.errorMessage__button,
+.section__button {
+  appearance: none;
+  border: none;
+  background: none;
+  color: #bf5555;
+  cursor: pointer;
+}
+.errorMessage__button:hover,
+.errorMessage__button:focus,
+.section__button:hover,
+.section__button:focus {
+  outline: none;
+  opacity: .6;
+}
+.errorMessage__button:active,
+.section__button:active {
+  opacity: 1;
+}
+footer {
+  width:100%;
+  height:60px;
+  position: relative;
+  padding:0 10px;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  background-color:#bf5555;
+  box-sizing:border-box;
+}
+.footer__link {
+  text-decoration:none;
+  color:#000;
+  font-weight:600;
+}
+@media (min-width: 415px) {
+  .errorMessage__text,
+  .errorMessage__button {
+    font-size: 24px;
   }
-  to {
-    transform: rotate(360deg);
+  .display {
+    width: 744px;
+    max-width: 100%;
+    margin: 0 auto auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .section {
+    width: 336px;
+    max-width: 42%;
+    max-width: calc(50% - 24px);
+  }
+}
+@media (min-height: 1024px) {
+  .header__gap {
+    height: 8vh;
   }
 }
